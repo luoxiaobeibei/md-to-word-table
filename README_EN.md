@@ -4,6 +4,8 @@
 
 A simple and easy-to-use tool that quickly converts Markdown tables to Word-compatible HTML tables, supporting direct copy and paste.
 
+- start use it online: [https://md-to-word-table.pages.dev/](https://md-to-word-table.pages.dev/)
+
 ## 🌟 Features
 
 - One-click conversion from Markdown tables to Word-compatible format
