@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const markdownInput = document.getElementById('markdownInput');
     const convertButton = document.getElementById('convertButton');
+    const clearButton = document.getElementById('clearButton');
     const htmlPreview = document.getElementById('htmlPreview');
     const statusMessage = document.getElementById('statusMessage');
     const langZhBtn = document.getElementById('lang-zh');
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'guide-step3': '在Word文档中直接粘贴(Ctrl+V)即可得到格式化的表格',
             'input-title': '粘贴您的Markdown表格：',
             'convert-button': '转换并复制到剪贴板',
+            'clear-button': '清空',
             'preview-title': '预览 (HTML表格)',
             'status-success': '表格HTML已复制到剪贴板！',
             'status-empty': '错误：输入为空。',
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'guide-step3': 'Paste (Ctrl+V) directly into your Word document to get the formatted table',
             'input-title': 'Paste your Markdown table:',
             'convert-button': 'Convert & Copy to Clipboard',
+            'clear-button': 'Clear',
             'preview-title': 'Preview (HTML Table)',
             'status-success': 'Table HTML (with borders) copied to clipboard!',
             'status-empty': 'Error: Input is empty.',
@@ -152,6 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 htmlPreview.innerHTML = generatedHtml;
             }
         }
+    });
+
+    // 添加清空按钮功能
+    clearButton.addEventListener('click', () => {
+        markdownInput.value = '';
+        htmlPreview.innerHTML = '';
+        statusMessage.classList.add('d-none');
     });
 
     function showStatus(message, type) {
